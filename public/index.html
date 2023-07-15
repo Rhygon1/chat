@@ -32,8 +32,8 @@
             overflow-y: scroll;
             overflow-x: hidden;
 
-            width:1650px;
-            height:840px;
+            width:84vw;
+            height:90vh;
             transform:rotateX(180deg);
                             -moz-transform:rotateX(180deg); /* Mozilla */
                             -webkit-transform:rotateX(180deg); /* Safari and Chrome */
@@ -58,7 +58,7 @@
         #main{ position: relative; width: 97vw !important}
         #secong{ position: absolute; right: 0 !important; top: 10px; }
 
-        @media (max-width: 450px){
+        @media (max-width: 100vh){
         /* width */
         ::-webkit-scrollbar {
           width: 0px;
@@ -86,7 +86,7 @@
                 overflow-x: hidden;
 
                 width:45vh;
-                height:80vh;
+                height:90vh;
                 transform:rotateX(180deg);
                                 -moz-transform:rotateX(180deg); /* Mozilla */
                                 -webkit-transform:rotateX(180deg); /* Safari and Chrome */
@@ -94,14 +94,14 @@
                                 -o-transform:rotateX(180deg); /* Opera */
             }
             .Color{
-            height: auto; width: 80%; margin-top: 4px;
+            height: auto; width: 80vw; margin-top: 4px; font-size: 13px;
             transform:rotateX(180deg);
                             -moz-transform:rotateX(180deg); /* Mozilla */
                             -webkit-transform:rotateX(180deg); /* Safari and Chrome */
                             -ms-transform:rotateX(180deg); /* IE 9+ */
                             -o-transform:rotateX(180deg); /* Opera */
             }  
-            #input-message{ position: absolute !important; bottom: -140px; right: -100; display: flex; justify-content: center; margin-bottom: 10px;}
+            #input-message{ position: fixed !important; bottom: 20px; display: flex; justify-content: center; margin: 0px;}
             #message{ width: 50vw; height: 30px; border: 2px solid gold; background-color: black; color: white; font-size: 20px;}
             button{ margin-left: 10px; background-color: black; color: gold; border: 1px solid gold;}
             #message:focus{ outline:none; border: 3px solid gold; }
