@@ -94,7 +94,7 @@
                                 -o-transform:rotateX(180deg); /* Opera */
             }
             .Color{
-            height: auto; width: 80%;
+            height: auto; width: 80%; margin-top: 4px;
             transform:rotateX(180deg);
                             -moz-transform:rotateX(180deg); /* Mozilla */
                             -webkit-transform:rotateX(180deg); /* Safari and Chrome */
@@ -185,21 +185,6 @@
             a.forEach(mess=>{
                 let messagebox = document.createElement('div')
                 messagebox.classList.add("Color")
-                var x = window.matchMedia("(max-width: 450px)")
-                if(x.matches){
-                    if(mess.length > 20){
-                        for(i=20; i<=(Math.floor(mess.length / 20))*20; i += 20){
-                            arr = [...mess]
-                            arr.splice(i, 0, " ")
-                            mess = arr.join("")
-                        }                        
-                        messagebox.style = `height: ${((Math.floor(mess.length / 20)) * 20) + 12}px;`
-                    }
-                } else {
-                    if(mess.length > 130){
-                        messagebox.style = `height: ${((Math.floor(mess.length / 60)) * 20)}px;`
-                    }
-                }
                 messagebox.innerText = mess
                 document.getElementById('Messages').prepend(messagebox)
             })
