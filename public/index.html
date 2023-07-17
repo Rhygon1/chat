@@ -219,6 +219,14 @@
             messagebox.classList.add("Color")
             messagebox.innerText = `${User}: ${message}`
             document.getElementById('Messages').prepend(messagebox)
+            Notification.requestPermission().then(perm => {
+                console.log(perm)
+                if (perm === 'denied') return
+                let n = new Notification(`${User} sent a message`, {
+                    body: message
+                })
+                console.log(n)
+            })
         })
         
 
