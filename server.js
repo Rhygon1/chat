@@ -20,9 +20,11 @@ const vapidKeys = {
     privateKey: 'vqqrlrAwVPqHHPet5j1j2CqGVPQaBAgoNn0K9-QKIU8',
 };
 
+const convertedVapidKey = webpush.urlBase64ToUint8Array(vapidKeys.publicKey);
+
 webpush.setVapidDetails(
     'mailto:dhruvgoel160207@gmail.com',
-    vapidKeys.publicKey,
+    convertedVapidKey,
     vapidKeys.privateKey
 );
 
