@@ -1,3 +1,5 @@
+let notifSent = false;
+
 self.addEventListener('push', event => {
     const data = event.data.json();
     const options = {
@@ -8,8 +10,9 @@ self.addEventListener('push', event => {
         self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
             const isPageActive = clients.some(client => client.visibilityState === 'visible');
 
-            if (!isPageActive) {
+            if (!notifSent && !isPageActive) {
                 console.log(data.title, data.body)
+                notifSent = true;
                 return self.registration.showNotification(data.title, options);
             }
         })
@@ -18,7 +21,10 @@ self.addEventListener('push', event => {
 
 self.addEventListener('notificationclick', event => {
     const url = 'https://qchat.onrender.com';
-    event.waitUntil(clients.openWindow(url).then(() => event.notification.close()));
+    event.waitUntil(clients.openWindow(url).then(() => {
+        event.notification.close()
+        notifSent = false;
+    }));
   });
 
 self.addEventListener('install', event => {
