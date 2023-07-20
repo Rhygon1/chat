@@ -2,6 +2,4 @@
     "name": "qchat",
     "short_name": "chat",
     "start_url": "/index.html",
-    "display": "standalone",
-    "gcm_sender_id": "BMZEL1YuVQ-hSukBcC4EayOfNbfmMvt-hz0cEFtV-PSkkWAU2o2O7aeKzKKwBpcCI3wjb5nPhn9W_Lp3K170fTU"
-  }
+    "display": "standalone"}

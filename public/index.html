@@ -264,6 +264,8 @@
               if (Notification.permission === "granted") {
                 const subscription = await registration.pushManager.subscribe({
                   userVisibleOnly: true,
+                  applicationServerKey:
+                    "BMZEL1YuVQ-hSukBcC4EayOfNbfmMvt-hz0cEFtV-PSkkWAU2o2O7aeKzKKwBpcCI3wjb5nPhn9W_Lp3K170fTU",
                 });
                 await sendSubscriptionToServer(subscription);
                 localStorage.setItem("isServiceWorkerRegistered", "true");
@@ -273,6 +275,8 @@
                   const subscription = await registration.pushManager.subscribe(
                     {
                       userVisibleOnly: true,
+                      applicationServerKey:
+                        "BMZEL1YuVQ-hSukBcC4EayOfNbfmMvt-hz0cEFtV-PSkkWAU2o2O7aeKzKKwBpcCI3wjb5nPhn9W_Lp3K170fTU",
                     }
                   );
                   await sendSubscriptionToServer(subscription);
