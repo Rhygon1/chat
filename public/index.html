@@ -1,272 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Document</title>
     <style>
-        /* width */
-        ::-webkit-scrollbar {
-          width: 20px;
-        }
-        
-        /* Track */
-        ::-webkit-scrollbar-track {
-          box-shadow: inset 0 0 5px grey; 
-          border-radius: 10px;
-        }
-         
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background: gold; 
-          border-radius: 10px;
-        }
-        
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: gold; 
-        }
-        body{ margin: 10px; background-color: black; color: gold; font-family: Arial, Helvetica, sans-serif;}
-        .messages{
-            overflow-y: scroll;
-            overflow-x: hidden;
+      /* width */
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
 
-            width:84vw;
-            height:90vh;
-            transform:rotateX(180deg);
-                            -moz-transform:rotateX(180deg); /* Mozilla */
-                            -webkit-transform:rotateX(180deg); /* Safari and Chrome */
-                            -ms-transform:rotateX(180deg); /* IE 9+ */
-                            -o-transform:rotateX(180deg); /* Opera */
-        }
-        .Color{
-        height: 20px; width: 900px;
-        transform:rotateX(180deg);
-                        -moz-transform:rotateX(180deg); /* Mozilla */
-                        -webkit-transform:rotateX(180deg); /* Safari and Chrome */
-                        -ms-transform:rotateX(180deg); /* IE 9+ */
-                        -o-transform:rotateX(180deg); /* Opera */
-        }   
-        #input-message{ position: fixed; bottom: 0px; display: flex; justify-content: center; margin-bottom: 10px; margin-left: 0px}
-        #message{ width: 86vw; height: 30px; border: 2px solid gold; background-color: black; color: white; font-size: 20px;}
-        button{ margin-left: 10px; background-color: black; color: gold; border: 1px solid gold;}
-        #message:focus{ outline:none; border: 3px solid gold; }
-        #name{ width: 160px; height: 15px; border: 2px solid gold; background-color: black; color: white;}
-        #name:focus{ outline:none; border: 3px solid gold; }
-        button:hover{ outline: none; border: 2px solid gold;}
-        #main{ position: relative; width: 97vw !important}
-        #secong{ position: absolute; right: 0 !important; top: 10px; }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
 
-        @media (max-width: 100vh){
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: gold;
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: gold;
+      }
+      body {
+        margin: 10px;
+        background-color: black;
+        color: gold;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .messages {
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        width: 84vw;
+        height: 90vh;
+        transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg); /* Mozilla */
+        -webkit-transform: rotateX(180deg); /* Safari and Chrome */
+        -ms-transform: rotateX(180deg); /* IE 9+ */
+        -o-transform: rotateX(180deg); /* Opera */
+      }
+      .Color {
+        height: 20px;
+        width: 900px;
+        transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg); /* Mozilla */
+        -webkit-transform: rotateX(180deg); /* Safari and Chrome */
+        -ms-transform: rotateX(180deg); /* IE 9+ */
+        -o-transform: rotateX(180deg); /* Opera */
+      }
+      #input-message {
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-left: 0px;
+      }
+      #message {
+        width: 86vw;
+        height: 30px;
+        border: 2px solid gold;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+      }
+      button {
+        margin-left: 10px;
+        background-color: black;
+        color: gold;
+        border: 1px solid gold;
+      }
+      #message:focus {
+        outline: none;
+        border: 3px solid gold;
+      }
+      #name {
+        width: 160px;
+        height: 15px;
+        border: 2px solid gold;
+        background-color: black;
+        color: white;
+      }
+      #name:focus {
+        outline: none;
+        border: 3px solid gold;
+      }
+      button:hover {
+        outline: none;
+        border: 2px solid gold;
+      }
+      #main {
+        position: relative;
+        width: 97vw !important;
+      }
+      #secong {
+        position: absolute;
+        right: 0 !important;
+        top: 10px;
+      }
+
+      @media (max-width: 100vh) {
         /* width */
         ::-webkit-scrollbar {
           width: 0px;
         }
-        
+
         /* Track */
         ::-webkit-scrollbar-track {
-          box-shadow: inset 0 0 5px grey; 
+          box-shadow: inset 0 0 5px grey;
           border-radius: 4px;
         }
-         
+
         /* Handle */
         ::-webkit-scrollbar-thumb {
-          background: gold; 
+          background: gold;
           border-radius: 40px;
         }
-        
+
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-          background: gold; 
+          background: gold;
         }
-            body{ margin: 3px; background-color: black; color: gold; font-family: Arial, Helvetica, sans-serif; padding: 0%;}
-            .messages{
-                overflow-y: scroll;
-                overflow-x: hidden;
+        body {
+          margin: 3px;
+          background-color: black;
+          color: gold;
+          font-family: Arial, Helvetica, sans-serif;
+          padding: 0%;
+        }
+        .messages {
+          overflow-y: scroll;
+          overflow-x: hidden;
 
-                width:45vh;
-                height:80vh;
-                transform:rotateX(180deg);
-                                -moz-transform:rotateX(180deg); /* Mozilla */
-                                -webkit-transform:rotateX(180deg); /* Safari and Chrome */
-                                -ms-transform:rotateX(180deg); /* IE 9+ */
-                                -o-transform:rotateX(180deg); /* Opera */
-            }
-            .Color{
-            height: auto; width: 80vw; margin-top: 4px; font-size: 13px;
-            transform:rotateX(180deg);
-                            -moz-transform:rotateX(180deg); /* Mozilla */
-                            -webkit-transform:rotateX(180deg); /* Safari and Chrome */
-                            -ms-transform:rotateX(180deg); /* IE 9+ */
-                            -o-transform:rotateX(180deg); /* Opera */
-            }  
-            #input-message{ position: fixed !important; bottom: 20px; display: flex; justify-content: center; margin: 0px;}
-            #message{ width: 50vw; height: 30px; border: 2px solid gold; background-color: black; color: white; font-size: 20px;}
-            button{ margin-left: 10px; background-color: black; color: gold; border: 1px solid gold;}
-            #message:focus{ outline:none; border: 3px solid gold; }
-            #name{ width: 160px; height: 15px; border: 2px solid gold; background-color: black; color: white;}
-            #name:focus{ outline:none; border: 3px solid gold; }
-            button:hover{ outline: none; border: 2px solid gold;}
-            #main{ position: relative; width: 95vw !important}
-            #secong{ position: absolute !important; right: 0 !important; top: 10px; }
-            #Change{ width: 20vw }
-            #Send{ width:20vw }
+          width: 45vh;
+          height: 80vh;
+          transform: rotateX(180deg);
+          -moz-transform: rotateX(180deg); /* Mozilla */
+          -webkit-transform: rotateX(180deg); /* Safari and Chrome */
+          -ms-transform: rotateX(180deg); /* IE 9+ */
+          -o-transform: rotateX(180deg); /* Opera */
         }
+        .Color {
+          height: auto;
+          width: 80vw;
+          margin-top: 4px;
+          font-size: 13px;
+          transform: rotateX(180deg);
+          -moz-transform: rotateX(180deg); /* Mozilla */
+          -webkit-transform: rotateX(180deg); /* Safari and Chrome */
+          -ms-transform: rotateX(180deg); /* IE 9+ */
+          -o-transform: rotateX(180deg); /* Opera */
+        }
+        #input-message {
+          position: fixed !important;
+          bottom: 20px;
+          display: flex;
+          justify-content: center;
+          margin: 0px;
+        }
+        #message {
+          width: 50vw;
+          height: 30px;
+          border: 2px solid gold;
+          background-color: black;
+          color: white;
+          font-size: 20px;
+        }
+        button {
+          margin-left: 10px;
+          background-color: black;
+          color: gold;
+          border: 1px solid gold;
+        }
+        #message:focus {
+          outline: none;
+          border: 3px solid gold;
+        }
+        #name {
+          width: 160px;
+          height: 15px;
+          border: 2px solid gold;
+          background-color: black;
+          color: white;
+        }
+        #name:focus {
+          outline: none;
+          border: 3px solid gold;
+        }
+        button:hover {
+          outline: none;
+          border: 2px solid gold;
+        }
+        #main {
+          position: relative;
+          width: 95vw !important;
+        }
+        #secong {
+          position: absolute !important;
+          right: 0 !important;
+          top: 10px;
+        }
+        #Change {
+          width: 20vw;
+        }
+        #Send {
+          width: 20vw;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="main">
-        <div id="first">
-            <div id="Messages" class="messages"></div>
-            <div id="input-message">
-                <input type="text" id="message">
-                <button id="Send">Send</button>
-                <button id="Change">Change username</button>
-            </div>
+      <div id="first">
+        <div id="Messages" class="messages"></div>
+        <div id="input-message">
+          <input type="text" id="message" />
+          <button id="Send">Send</button>
+          <button id="Change">Change username</button>
         </div>
-        <div id="secong">People Online:</div>
+      </div>
+      <div id="secong">People Online:</div>
     </div>
     <div id="username">
-        <input type="text" id="name">
-        <button id="submit">Enter name</button>
+      <input type="text" id="name" />
+      <button id="submit">Enter name</button>
     </div>
     <script src="/socket.io/socket.io.js"></script>
+
     <script>
-        let socket = io("/")
-        let name = document.getElementById('name')
-        let submitName = document.getElementById('submit')
-        let Sub = document.getElementById('username')
+      async function sendSubscriptionToServer(subscription) {
+        const response = await fetch("/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ subscription }), // Assuming 'subscription' is the subscription object
+        });
+      }
 
-        Sub.hidden=true
+      // Function to register the Service Worker, request notification permission, and automatically subscribe to push notifications
+      async function subscribeToPushNotifications() {
+        if ("serviceWorker" in navigator) {
+          try {
+            // Check if the Service Worker is already registered
+            const isServiceWorkerRegistered = localStorage.getItem(
+              "isServiceWorkerRegistered"
+            );
 
-        let message = document.getElementById('message')
-        let send = document.getElementById("Send")
+            if (!isServiceWorkerRegistered) {
+              const registration = await navigator.serviceWorker.register(
+                "sw.js"
+              );
+              console.log("Service Worker registered:", registration);
 
-        document.getElementById('Change').addEventListener("click", ()=>{
-            Sub.hidden=false
-            document.getElementById('main').hidden=true
-        })
-
-        document.addEventListener("keyup", key=>{
-            if (key.keyCode==13){
-                if (document.getElementById('main').hidden){
-                    if (name.value!="" || name.value!=" "){
-                        localStorage.setItem("Username", name.value)
-                        name.value=""
-                        Sub.hidden=true
-                        document.getElementById('main').hidden=false
-                        socket.emit("function", localStorage.getItem("Username"))
+              // Request permission to show notifications
+              if (Notification.permission === "granted") {
+                const subscription = await registration.pushManager.subscribe({
+                  userVisibleOnly: true,
+                });
+                await sendSubscriptionToServer(subscription);
+                localStorage.setItem("isServiceWorkerRegistered", "true");
+              } else if (Notification.permission === "default") {
+                const permissionResult = await Notification.requestPermission();
+                if (Notification.permission === "granted") {
+                  const subscription = await registration.pushManager.subscribe(
+                    {
+                      userVisibleOnly: true,
                     }
-                } else {
-                    if(message.value!="" && message.value!=" "){
-                        let User = localStorage.getItem("Username")
-                        let message1 = message.value
-                        socket.emit("send-message", message1, User)
-                        Addmessage()
-                    }
-                    
+                  );
+                  await sendSubscriptionToServer(subscription);
+                  localStorage.setItem("isServiceWorkerRegistered", "true");
                 }
+              }
             }
-        })
-
-        send.addEventListener("click", ()=>{
-            if(message.value!="" && message.value!=" "){
-                let User = localStorage.getItem("Username")
-                let message1 = message.value
-                socket.emit("send-message", message1, User)
-                Addmessage()
-            }
-        })
-
-        socket.on("Get", (a, b)=>{
-            let name = localStorage.getItem("Username")
-            socket.emit("Use", name)
-            a.forEach(mess=>{
-                let messagebox = document.createElement('div')
-                messagebox.classList.add("Color")
-                messagebox.innerText = mess
-                document.getElementById('Messages').prepend(messagebox)
-            })
-            b.forEach(user=>{
-                let div = document.createElement('div')
-                div.id=user
-                div.innerText=user
-                document.getElementById('secong').append(div)
-            })
-            if (localStorage.getItem("Username")!=null){
-                socket.emit("function", localStorage.getItem("Username"))
-            }
-        })
-
-        socket.on("Username", ()=>{
-            Sub.hidden=false
-            document.getElementById('main').hidden=true
-        })
-
-        submitName.addEventListener("click", ()=>{
-            if (name.value!="" || name.value!=" "){
-                localStorage.setItem("Username", name.value)
-                name.value=""
-                Sub.hidden=true
-                document.getElementById('main').hidden=false
-                socket.emit("function", localStorage.getItem("Username"))
-            }
-        })
-
-        socket.on("Add-message", (message, User)=>{
-            let messagebox = document.createElement('div')
-            messagebox.classList.add("Color")
-            messagebox.innerText = `${User}: ${message}`
-            document.getElementById('Messages').prepend(messagebox)
-            Notification.requestPermission().then(perm => {
-                console.log(perm)
-                if (perm === 'denied') return
-                let n = new Notification(`${User} sent a message`, {
-                    body: message
-                })
-                console.log(n)
-            })
-        })
-        
-
-        function Addmessage(){
-            let message1 = message.value
-            let messagebox = document.createElement('div')
-            messagebox.classList.add("Color")
-            messagebox.innerText = `${localStorage.getItem("Username")}: ${message1}`
-            document.getElementById('Messages').prepend(messagebox)
-            message.value=""
+          } catch (error) {
+            console.error("Error registering Service Worker:", error);
+          }
         }
+      }
 
-        socket.on("Start", user=>{
-            let secong = document.getElementById('secong').childNodes
-            let one = []
-            secong.forEach(div=>{
-                one.push(div.id)
-            })
-            if(one.includes(user)){
-            } else {    
-                let div = document.createElement('div')
-                div.id=user
-                div.innerText=user
-                document.getElementById('secong').append(div)
+      // Call the subscribeToPushNotifications function when appropriate
+      // e.g., when the web app starts or when the user logs in (with caution)
+      subscribeToPushNotifications();
+
+      let socket = io("/");
+      let name = document.getElementById("name");
+      let submitName = document.getElementById("submit");
+      let Sub = document.getElementById("username");
+
+      Sub.hidden = true;
+
+      let message = document.getElementById("message");
+      let send = document.getElementById("Send");
+
+      document.getElementById("Change").addEventListener("click", () => {
+        Sub.hidden = false;
+        document.getElementById("main").hidden = true;
+      });
+
+      document.addEventListener("keyup", (key) => {
+        if (key.keyCode == 13) {
+          if (document.getElementById("main").hidden) {
+            if (name.value != "" || name.value != " ") {
+              localStorage.setItem("Username", name.value);
+              name.value = "";
+              Sub.hidden = true;
+              document.getElementById("main").hidden = false;
+              socket.emit("function", localStorage.getItem("Username"));
             }
-        })
+          } else {
+            if (message.value != "" && message.value != " ") {
+              let User = localStorage.getItem("Username");
+              let message1 = message.value;
+              socket.emit("send-message", message1, User);
+              Addmessage();
+            }
+          }
+        }
+      });
 
-        socket.on("upd", name=>{
-            let divs =  document.querySelectorAll('div')
-            divs.forEach(div=>{
-                if (div.id==name){
-                    document.getElementById('secong').removeChild(document.getElementById(name))
+      send.addEventListener("click", () => {
+        if (message.value != "" && message.value != " ") {
+          let User = localStorage.getItem("Username");
+          let message1 = message.value;
+          socket.emit("send-message", message1, User);
+          Addmessage();
+          if ("Notification" in window) {
+            // Request permission to show notifications
+            Notification.requestPermission()
+              .then((permission) => {
+                if (permission === "granted") {
+                  // Create and display the notification
+                  new Notification("Hello", {
+                    body: "This is a sample notification!",
+                  });
+                } else {
+                  console.log("User denied notification permission.");
                 }
-            })
-        })
+              })
+              .catch((error) => {
+                console.error(
+                  "Error requesting notification permission:",
+                  error
+                );
+              });
+          } else {
+            console.warn("Notifications are not supported in this browser.");
+          }
+        }
+      });
 
-        socket.on("delete", ()=>{
-            const mesDiv = document.getElementById('Messages')
-            mesDiv.innerHTML=""
-        })
+      socket.on("Get", (a, b) => {
+        let name = localStorage.getItem("Username");
+        socket.emit("Use", name);
+        a.forEach((mess) => {
+          let messagebox = document.createElement("div");
+          messagebox.classList.add("Color");
+          messagebox.innerText = mess;
+          document.getElementById("Messages").prepend(messagebox);
+        });
+        b.forEach((user) => {
+          let div = document.createElement("div");
+          div.id = user;
+          div.innerText = user;
+          document.getElementById("secong").append(div);
+        });
+        if (localStorage.getItem("Username") != null) {
+          socket.emit("function", localStorage.getItem("Username"));
+        }
+      });
+
+      socket.on("Username", () => {
+        Sub.hidden = false;
+        document.getElementById("main").hidden = true;
+      });
+
+      submitName.addEventListener("click", () => {
+        if (name.value != "" || name.value != " ") {
+          localStorage.setItem("Username", name.value);
+          name.value = "";
+          Sub.hidden = true;
+          document.getElementById("main").hidden = false;
+          socket.emit("function", localStorage.getItem("Username"));
+        }
+      });
+
+      socket.on("Add-message", (message, User) => {
+        let messagebox = document.createElement("div");
+        messagebox.classList.add("Color");
+        messagebox.innerText = `${User}: ${message}`;
+        document.getElementById("Messages").prepend(messagebox);
+      });
+
+      function Addmessage() {
+        let message1 = message.value;
+        let messagebox = document.createElement("div");
+        messagebox.classList.add("Color");
+        messagebox.innerText = `${localStorage.getItem(
+          "Username"
+        )}: ${message1}`;
+        document.getElementById("Messages").prepend(messagebox);
+        message.value = "";
+      }
+
+      socket.on("Start", (user) => {
+        let secong = document.getElementById("secong").childNodes;
+        let one = [];
+        secong.forEach((div) => {
+          one.push(div.id);
+        });
+        if (one.includes(user)) {
+        } else {
+          let div = document.createElement("div");
+          div.id = user;
+          div.innerText = user;
+          document.getElementById("secong").append(div);
+        }
+      });
+
+      socket.on("upd", (name) => {
+        let divs = document.querySelectorAll("div");
+        divs.forEach((div) => {
+          if (div.id == name) {
+            document
+              .getElementById("secong")
+              .removeChild(document.getElementById(name));
+          }
+        });
+      });
+
+      socket.on("delete", () => {
+        const mesDiv = document.getElementById("Messages");
+        mesDiv.innerHTML = "";
+      });
     </script>
-</body>
+  </body>
 </html>
