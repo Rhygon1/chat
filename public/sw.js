@@ -25,7 +25,13 @@ self.addEventListener('notificationclick', event => {
         event.notification.close()
         notifSent = false;
     }));
-  });
+});
+
+self.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        notificationSent = false; // Reset the flag when the user opens the web page
+    }
+});
 
 self.addEventListener('install', event => {
     event.waitUntil(self.skipWaiting());
