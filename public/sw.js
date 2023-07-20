@@ -4,26 +4,26 @@ self.addEventListener('push', event => {
     const options = {
         body: data.body,
     };
-    try{
-        event.waitUntil(
-            self.registration.showNotification(data.title, options)
-        )
-    } catch(e) {
-        console.error(e)
-    }
-    console.log(data, 'hi');
-
-    // if (self.clients && self.clients.matchAll) {
+    // try{
     //     event.waitUntil(
-    //         self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
-    //             if (!(clients && clients.length > 0)) {
-    //                 return self.registration.showNotification(data.title, options);
-    //             }
-    //         })
-    //     );
-    // } else {
-    //     event.waitUntil(self.registration.showNotification(data.title, options));
+    //         self.registration.showNotification(data.title, options)
+    //     )
+    // } catch(e) {
+    //     console.error(er)
     // }
+    // console.log(data, 'hi');
+
+    if (self.clients && self.clients.matchAll) {
+        event.waitUntil(
+            self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
+                if (!(clients && clients.length > 0)) {
+                    return self.registration.showNotification(data.title, options);
+                }
+            })
+        );
+    } else {
+        event.waitUntil(self.registration.showNotification(data.title, options));
+    }
 });
 
 self.addEventListener('install', event => {
