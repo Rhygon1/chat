@@ -18,7 +18,7 @@ self.addEventListener('push', event => {
 
 self.addEventListener('notificationclick', event => {
     const url = 'https://qchat.onrender.com';
-    event.waitUntil(clients.openWindow(url));
+    event.waitUntil(clients.openWindow(url).then(() => event.notification.close()));
   });
 
 self.addEventListener('install', event => {
