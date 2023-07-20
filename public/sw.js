@@ -13,17 +13,17 @@ self.addEventListener('push', event => {
     }
     console.log(data, 'hi');
 
-    if (self.clients && self.clients.matchAll) {
-        event.waitUntil(
-            self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
-                if (!(clients && clients.length > 0)) {
-                    return self.registration.showNotification(data.title, options);
-                }
-            })
-        );
-    } else {
-        event.waitUntil(self.registration.showNotification(data.title, options));
-    }
+    // if (self.clients && self.clients.matchAll) {
+    //     event.waitUntil(
+    //         self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
+    //             if (!(clients && clients.length > 0)) {
+    //                 return self.registration.showNotification(data.title, options);
+    //             }
+    //         })
+    //     );
+    // } else {
+    //     event.waitUntil(self.registration.showNotification(data.title, options));
+    // }
 });
 
 self.addEventListener('install', event => {

@@ -92,7 +92,7 @@ io.on("connection", (socket) => {
             name: User,
             message: message
         })
-        // newMes.save()
+        newMes.save()
 
         sub.find({})
             .then((subs) => {
