@@ -1,29 +1,19 @@
 self.addEventListener('push', event => {
-    console.log('hi');
     const data = event.data.json();
     const options = {
-        body: data.body,
+        body: data.body
     };
-    // try{
-    //     event.waitUntil(
-    //         self.registration.showNotification(data.title, options)
-    //     )
-    // } catch(e) {
-    //     console.error(er)
-    // }
-    // console.log(data, 'hi');
 
-    if (self.clients && self.clients.matchAll) {
-        event.waitUntil(
-            self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
-                if (!(clients && clients.length > 0)) {
-                    return self.registration.showNotification(data.title, options);
-                }
-            })
-        );
-    } else {
-        event.waitUntil(self.registration.showNotification(data.title, options));
-    }
+    event.waitUntil(
+        self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
+            const isPageActive = clients.some(client => client.visibilityState === 'visible');
+
+            if (!isPageActive) {
+                console.log(data.title, data.body)
+                return self.registration.showNotification(data.title, options);
+            }
+        })
+    );
 });
 
 self.addEventListener('notificationclick', event => {
