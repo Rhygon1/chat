@@ -26,6 +26,11 @@ self.addEventListener('push', event => {
     }
 });
 
+self.addEventListener('notificationclick', event => {
+    const url = 'https://qchat.onrender.com';
+    event.waitUntil(clients.openWindow(url));
+  });
+
 self.addEventListener('install', event => {
     event.waitUntil(self.skipWaiting());
 });
