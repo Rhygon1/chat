@@ -21,7 +21,7 @@ const vapidKeys = {
 };
 
 webpush.setVapidDetails(
-    'https://www.qchat.onrender.com',
+    'mailto:dhruvgoel160207@gmail.com',
     vapidKeys.publicKey,
     vapidKeys.privateKey
 );
