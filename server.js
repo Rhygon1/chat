@@ -99,8 +99,7 @@ io.on("connection", (socket) => {
                 const payload = JSON.stringify({ title: 'Hello', body: User + " " + message });
                 for(let s of subs){
                     try{
-                        webpush.sendNotification(s, payload)
-                            .then(console.log)                        
+                        webpush.sendNotification(s, payload)        
                     } catch {
 
                     }
