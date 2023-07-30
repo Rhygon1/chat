@@ -384,6 +384,7 @@
         messagebox.classList.add("Color");
         messagebox.innerText = `${User}: ${message}`;
         document.getElementById("Messages").append(messagebox);
+        messagebox.scrollIntoView()
       });
 
       function Addmessage() {
@@ -394,6 +395,7 @@
           "Username"
         )}: ${message1}`;
         document.getElementById("Messages").append(messagebox);
+        messagebox.scrollIntoView()
         message.value = "";
       }
 
