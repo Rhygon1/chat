@@ -59,6 +59,8 @@ let users = {};
 io.on("connection", (socket) => {
     let a = []
     Message.find()
+        .sort({ _id: -1 })
+        .limit(50)
         .then((results) => {
             results.forEach(mes => {
                 const new1 = `${mes.name}: ${mes.message}`
