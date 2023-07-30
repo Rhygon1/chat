@@ -383,7 +383,7 @@
         let messagebox = document.createElement("div");
         messagebox.classList.add("Color");
         messagebox.innerText = `${User}: ${message}`;
-        document.getElementById("Messages").prepend(messagebox);
+        document.getElementById("Messages").append(messagebox);
       });
 
       function Addmessage() {
@@ -393,7 +393,7 @@
         messagebox.innerText = `${localStorage.getItem(
           "Username"
         )}: ${message1}`;
-        document.getElementById("Messages").prepend(messagebox);
+        document.getElementById("Messages").append(messagebox);
         message.value = "";
       }
 
